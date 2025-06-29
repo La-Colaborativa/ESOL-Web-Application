@@ -1,68 +1,17 @@
 "use strict";
 
-const abrir = document.querySelector(".menu");
-const cerrar = document.querySelector(".close");
-const menu = document.querySelector(".navegation");
-const contenedor = document.querySelector(".body");
-
-let visible = false;
-let laguageVisible = false;
-
-function abrirMenu(e) {
-  e.stopPropagation();
-  abrir.classList.toggle("hidden");
-  menu.style.display = "flex";
-  cerrar.classList.toggle("hidden");
-  if (!visible) {
-    menu.style.height = menu.scrollHeight + "px";
-    visible = true;
-  }
-}
-
-cerrar.addEventListener("click", function cerrarMenu(e) {
-  if (visible && e.target === cerrar) {
-    menu.style.height = menu.scrollHeight + "px";
-    cerrar.classList.add("hidden");
-    abrir.classList.toggle("hidden");
-    requestAnimationFrame(() => {
-      menu.style.height = "0";
-    });
-    visible = false;
-  }
-});
-
-abrir.addEventListener("click", abrirMenu);
-
-document.addEventListener("click", (e) => {
-  if (visible && !menu.contains(e.target) && e.target !== cerrar) {
-    menu.style.height = menu.scrollHeight + "px"; // Reset antes de colapsar
-    cerrar.classList.toggle("hidden");
-    abrir.classList.toggle("hidden");
-    requestAnimationFrame(() => {
-      menu.style.height = "0";
-    });
-
-    visible = false;
-  }
-});
-
-// boton de lenguaje
 const language = document.querySelector(".language-selector");
 const english = document.querySelector(".selected");
 const spanish = document.querySelector(".option");
 const languageList = document.querySelectorAll(".language");
 
-function toggleLanguages() {
-  spanish.classList.toggle("show");
-}
-
-spanish.addEventListener("click", switchlanguages);
+let laguageVisible = false;
 
 function switchlanguages() {
   if (english.classList.contains("default")) {
     english.innerHTML = "";
     const img = document.createElement("img");
-    img.src = "media/icons8-spanish-flag-48.png";
+    img.src = "../media/icons8-spanish-flag-48.png";
     img.alt = "Spanish flag";
     img.style.width = "1.6875rem";
     img.style.height = "1.6875";
@@ -78,7 +27,7 @@ function switchlanguages() {
 
     spanish.innerHTML = "";
     const imge = document.createElement("img");
-    imge.src = "media/us.svg";
+    imge.src = "../media/us.svg";
     imge.alt = "American flag";
     imge.style.width = "1.6875rem";
     imge.style.height = "1.6875rem";
@@ -90,7 +39,7 @@ function switchlanguages() {
   } else {
     english.innerHTML = "";
     const img = document.createElement("img");
-    img.src = "media/us.svg";
+    img.src = "../media/us.svg";
     img.alt = "American flag";
     img.style.width = "1.6875rem";
     img.style.height = "1.6875";
@@ -106,7 +55,7 @@ function switchlanguages() {
 
     spanish.innerHTML = "";
     const imge = document.createElement("img");
-    imge.src = "media/icons8-spanish-flag-48.png";
+    imge.src = "../media/icons8-spanish-flag-48.png";
     imge.alt = "Spanish Flag";
     imge.style.width = "1.6875rem";
     imge.style.height = "1.6875rem";
@@ -124,7 +73,7 @@ function switchlanguages() {
   }
 }
 
-// english.addEventListener ("click", englishFunction);
+// english.addEventListener
 
 english.addEventListener("click", function (e) {
   e.stopPropagation();
@@ -143,4 +92,49 @@ document.addEventListener("click", (e) => {
   if (!spanish.contains(e.target)) {
     spanish.classList.add("hidden");
   }
+});
+
+spanish.addEventListener("click", switchlanguages);
+
+//modal-window
+
+const greetings = document.querySelector(".greetings");
+const professions = document.querySelector(".professions");
+const family = document.querySelector(".family");
+const verbToBe = document.querySelector(".to-be");
+const difficult = document.querySelector(".modal");
+const closeDifficult = document.querySelector(".close-window");
+const overlay = document.querySelector(".overlay");
+
+function openWindow() {
+  difficult.style.opacity = "100%";
+  difficult.style.zIndex = "10";
+  overlay.classList.toggle("hidden");
+}
+
+function closeWindow() {
+  overlay.classList.toggle("hidden");
+  difficult.style.opacity = "0";
+  setTimeout(() => {
+    difficult.style.zIndex = "-5";
+  }, 600);
+}
+
+verbToBe.addEventListener("click", openWindow);
+closeDifficult.addEventListener("click", closeWindow);
+overlay.addEventListener("click", closeWindow);
+
+// Autocompletado
+
+const input = document.getElementById("input");
+const lista = document.querySelectorAll(".topics");
+
+input.addEventListener("input", function () {
+  const text = input.value.toLocaleLowerCase().trim();
+
+  lista.forEach((section) => {
+    const contenido = section.textContent.toLocaleLowerCase();
+    const coincide = contenido.includes(text);
+    section.style.display = coincide ? "flex" : "none";
+  });
 });

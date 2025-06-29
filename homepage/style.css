@@ -87,7 +87,6 @@ header {
 }
 
 .hidden {
-  margin-top: 0;
   display: none;
 }
 
@@ -95,14 +94,10 @@ header {
   overflow: hidden;
   height: 0;
   transition: height 0.8s ease;
-  /* margin-top: 20px; */
   display: flex;
   flex-flow: column;
   text-align: center;
   gap: 10px;
-  /* transition: margin 1.8s ease; */
-  /* margin-bottom: 2.5rem; */
-  /* display: none; */
 }
 
 .linea-del-nav {
@@ -171,9 +166,6 @@ h1 {
   margin-bottom: 25px;
   cursor: pointer;
 }
-.checklist {
-  font-size: 50px;
-}
 
 .vocabulary {
   display: flex;
@@ -196,10 +188,6 @@ h1 {
   cursor: pointer;
 }
 
-.book {
-  font-size: 50px;
-}
-
 .grammar {
   display: flex;
   justify-content: center;
@@ -220,7 +208,7 @@ h1 {
   cursor: pointer;
 }
 
-.spellcheck {
+.symbol {
   font-size: 50px;
 }
 
@@ -230,9 +218,9 @@ footer {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  padding: 12px 0 0 0;
-  gap: 22px;
-  margin-top: 50px;
+  padding: 22px 0;
+  gap: 18px;
+  margin-top: 3.125rem;
   min-width: 100%;
 }
 
@@ -241,15 +229,17 @@ footer hr {
   width: 100%;
 }
 
-footer a {
+.about-us-help {
   margin-left: 19px;
   color: #fff;
   font-size: 18px;
+  text-decoration: none;
 }
 
 .colaborativa-logo {
   width: 12.9275rem;
   height: 3.625rem;
+  margin-bottom: 22px;
 }
 
 .links {
@@ -258,17 +248,18 @@ footer a {
   justify-content: center;
   gap: 14px;
   min-width: 100%;
-  text-align: center;
 }
 
-.logos {
+.all-logos {
   display: flex;
-  gap: 30px;
+  align-items: center;
   margin-top: 33px;
+  gap: 2.1875rem;
 }
 
-footer img {
+.logo {
   height: 3rem;
+  margin: 33px 0;
 }
 
 .last-text {
@@ -366,10 +357,6 @@ footer img {
     margin: 0;
   }
 
-  .checklist {
-    font-size: 105px;
-  }
-
   .vocabulary {
     flex-flow: column;
     width: 237px;
@@ -379,10 +366,6 @@ footer img {
     gap: 12px;
     justify-content: center;
     margin: 0;
-  }
-
-  .book {
-    font-size: 105px;
   }
 
   .grammar {
@@ -395,7 +378,7 @@ footer img {
     justify-content: center;
   }
 
-  .spellcheck {
+  .symbol {
     font-size: 105px;
   }
 
