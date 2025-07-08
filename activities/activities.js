@@ -14,7 +14,7 @@ function switchlanguages() {
     img.src = "../media/icons8-spanish-flag-48.png";
     img.alt = "Spanish flag";
     img.style.width = "1.6875rem";
-    img.style.height = "1.6875";
+    img.style.height = "1.6875rem";
     const text = document.createElement("span");
     text.textContent = "ES";
     text.style.fontSize = "16px";
@@ -42,7 +42,7 @@ function switchlanguages() {
     img.src = "../media/us.svg";
     img.alt = "American flag";
     img.style.width = "1.6875rem";
-    img.style.height = "1.6875";
+    img.style.height = "1.6875rem";
     const text = document.createElement("span");
     text.textContent = "EN";
     text.style.fontSize = "16px";
@@ -106,18 +106,29 @@ const difficult = document.querySelector(".modal");
 const closeDifficult = document.querySelector(".close-window");
 const overlay = document.querySelector(".overlay");
 
+// function animar()
+
 function openWindow() {
-  difficult.style.opacity = "100%";
-  difficult.style.zIndex = "10";
+  // difficult.classList.remove("modal");
+  // difficult.style.opacity = "1";
+  difficult.classList.add("modal-abierto");
   overlay.classList.toggle("hidden");
+  // difficult.stytle.zIndex = "10";
 }
 
 function closeWindow() {
+  // difficult.style.opacity = "0";
   overlay.classList.toggle("hidden");
-  difficult.style.opacity = "0";
-  setTimeout(() => {
-    difficult.style.zIndex = "-5";
-  }, 600);
+  difficult.classList.remove("modal-abierto");
+  // difficult.style.zIndex = "0";
+  // difficult.classList.add("modal");
+  // difficult.style.opacity = "0";
+
+  // requestAnimationFrame(opacity);
+
+  // setTimeout(() => {
+  // difficult.style.zIndex = "-5";
+  // }, 600);
 }
 
 verbToBe.addEventListener("click", openWindow);

@@ -5,10 +5,22 @@
 }
 
 body {
-  background: linear-gradient(to right, #fff3b5);
+  background: none;
   font-family: "inter", sans-serif;
   font-size: 16px;
   position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff3b5;
+  z-index: -1;
+  pointer-events: none;
 }
 
 header {
@@ -25,7 +37,7 @@ header {
   width: 2.625rem;
   height: 2.625rem;
 }
-h1 {
+h2 {
   font-size: 1.875rem;
   color: #fff;
 }
@@ -217,23 +229,35 @@ footer hr {
 }
 
 .modal {
+  background-color: #fff;
   width: 21.0625rem;
   height: 18.4375rem;
-  background-color: #fff;
   border-radius: 25px;
-  position: absolute;
-  left: 1.5625rem;
-  top: 24.3125rem;
+  position: fixed;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  z-index: -5;
   padding: 20px 20px;
   gap: 10px;
+  /* z-index: -5; */
+  pointer-events: none;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.modal.modal-abierto {
+  z-index: 10;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  /* transition: opacity 3s ease-out; */
+}
+
+html:has(.modal-abierto) {
+  overflow: hidden;
 }
 
 .header {
@@ -242,6 +266,7 @@ footer hr {
   justify-content: space-between;
   align-items: center;
 }
+
 .difficult {
   font-size: 20px;
   margin-left: 6.3125rem;
@@ -250,6 +275,7 @@ footer hr {
 .close-window {
   font-size: 2.1875rem;
   background-color: #fff;
+  cursor: pointer;
   border: none;
 }
 
@@ -282,6 +308,7 @@ label {
   font-size: 20px;
   font-weight: bold;
   color: #fff;
+  cursor: pointer;
 }
 
 .radio-personalizado input[type="radio"] {
@@ -323,4 +350,209 @@ label {
 
 .hidden {
   display: none;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-flow: column;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.1) 95%
+      ),
+      url(../media/activities-header.jpg);
+    width: 100%;
+    height: 27.5rem;
+    background-size: cover;
+    background-position: center 63%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    text-align: center;
+    justify-content: right;
+    padding: 30px 30px;
+    margin: 0;
+    border-radius: 0 0 50% 50% / 0 17% 17%;
+    position: relative;
+    gap: 40px;
+  }
+  .header-links {
+    display: flex;
+    align-items: start;
+    gap: 2.25rem;
+  }
+
+  .header-text {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: medium;
+    text-decoration: none;
+    letter-spacing: 4%;
+  }
+
+  .header-text:hover {
+    text-decoration: underline;
+    color: #92d6d7;
+  }
+
+  .symbol {
+    display: flex;
+  }
+
+  .header-text2 {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  #check {
+    font-size: 4.25rem;
+    color: #fff;
+  }
+
+  .go-back {
+    display: none;
+  }
+  .logo-principal {
+    max-width: 9.375rem;
+    max-height: 2.625rem;
+  }
+
+  .enunciado {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input-and-text {
+    display: flex;
+    flex-flow: column-reverse;
+    position: absolute;
+    gap: 2.5rem;
+    top: 14%;
+  }
+
+  .text {
+    width: 43.25rem;
+    height: 3.125rem;
+    font-size: 1.125rem;
+    color: #fff;
+  }
+
+  .activities-text {
+    font-size: 3rem;
+  }
+
+  #input {
+    width: 31.25rem;
+    height: 3.75rem;
+    padding: 1px 7px 1px 45px;
+    border-radius: 30px 0 0 30px;
+    margin-bottom: 0;
+  }
+
+  .search {
+    width: 7.3125rem;
+    height: 3.75rem;
+    border-radius: 0 30px 30px 0;
+  }
+  .search-icon {
+    width: 1.8125rem;
+    height: 1.834375rem;
+  }
+
+  .all-sections {
+    margin-top: 10px;
+    flex-flow: row;
+    gap: 38px;
+    flex-wrap: wrap;
+  }
+
+  .topics {
+    flex-flow: column;
+    border-radius: 7px;
+    width: 15rem;
+    height: 22rem;
+    padding: 0;
+  }
+
+  .background {
+    border-radius: 7px 7px 0 0;
+  }
+
+  .image {
+    width: 13rem;
+    height: 8rem;
+  }
+
+  .description {
+    font-size: 1.375rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 9px;
+  }
+
+  .description h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  .modal {
+    position: fixed;
+    left: 35%;
+    top: 25%;
+  }
+
+  footer {
+    margin-top: 50px;
+    height: 15.875rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    text-align: center;
+  }
+  footer hr {
+    display: none;
+  }
+  .colaborativa-logo {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 45px 45px;
+    justify-self: left;
+  }
+  .links {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: self-start;
+    gap: 3rem;
+    margin-top: 45px;
+    padding: 0;
+    font-size: 1.375rem;
+    text-align: center;
+  }
+  .footer-links {
+    justify-content: center;
+    color: #eee;
+    font-size: 1.25rem;
+  }
+  .all-logos {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    margin: 0;
+    justify-self: end;
+    align-self: center;
+    margin-right: 45px;
+  }
+  .logo {
+    height: 2.448125rem;
+  }
+  .last-text {
+    grid-column: 1/4;
+    grid-row: 2/3;
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 1.375rem;
+  }
 }
