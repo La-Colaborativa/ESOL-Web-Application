@@ -1,5 +1,6 @@
 "use strict";
 
+//     LANGUAGE:
 const language = document.querySelector(".language-selector");
 const english = document.querySelector(".selected");
 const spanish = document.querySelector(".option");
@@ -95,57 +96,3 @@ document.addEventListener("click", (e) => {
 });
 
 spanish.addEventListener("click", switchlanguages);
-
-//modal-window
-
-const greetings = document.querySelector(".greetings");
-const professions = document.querySelector(".professions");
-const family = document.querySelector(".family");
-const verbToBe = document.querySelector(".to-be");
-const difficult = document.querySelector(".modal");
-const closeDifficult = document.querySelector(".close-window");
-const overlay = document.querySelector(".overlay");
-
-// function animar()
-
-function openWindow() {
-  // difficult.classList.remove("modal");
-  // difficult.style.opacity = "1";
-  difficult.classList.add("modal-abierto");
-  overlay.classList.toggle("hidden");
-  // difficult.stytle.zIndex = "10";
-}
-
-function closeWindow() {
-  // difficult.style.opacity = "0";
-  overlay.classList.toggle("hidden");
-  difficult.classList.remove("modal-abierto");
-  // difficult.style.zIndex = "0";
-  // difficult.classList.add("modal");
-  // difficult.style.opacity = "0";
-
-  // requestAnimationFrame(opacity);
-
-  // setTimeout(() => {
-  // difficult.style.zIndex = "-5";
-  // }, 600);
-}
-
-verbToBe.addEventListener("click", openWindow);
-closeDifficult.addEventListener("click", closeWindow);
-overlay.addEventListener("click", closeWindow);
-
-// Autocompletado
-
-const input = document.getElementById("input");
-const lista = document.querySelectorAll(".topics");
-
-input.addEventListener("input", function () {
-  const text = input.value.toLocaleLowerCase().trim();
-
-  lista.forEach((section) => {
-    const contenido = section.textContent.toLocaleLowerCase();
-    const coincide = contenido.includes(text);
-    section.style.display = coincide ? "flex" : "none";
-  });
-});
