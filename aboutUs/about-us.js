@@ -1,71 +1,21 @@
 "use strict";
 
-const abrir = document.querySelector(".menu");
-const cerrar = document.querySelector(".close");
-const menu = document.querySelector(".navegation");
-const contenedor = document.querySelector(".body");
-
-let visible = false;
-let laguageVisible = false;
-
-function abrirMenu(e) {
-  e.stopPropagation();
-  abrir.classList.toggle("hidden");
-  menu.style.display = "flex";
-  cerrar.classList.toggle("hidden");
-  if (!visible) {
-    menu.style.height = menu.scrollHeight + "px";
-    visible = true;
-  }
-}
-
-cerrar.addEventListener("click", function cerrarMenu(e) {
-  if (visible && e.target === cerrar) {
-    menu.style.height = menu.scrollHeight + "px";
-    cerrar.classList.add("hidden");
-    abrir.classList.toggle("hidden");
-    requestAnimationFrame(() => {
-      menu.style.height = "0";
-    });
-    visible = false;
-  }
-});
-
-abrir.addEventListener("click", abrirMenu);
-
-document.addEventListener("click", (e) => {
-  if (visible && !menu.contains(e.target) && e.target !== cerrar) {
-    menu.style.height = menu.scrollHeight + "px"; // Reset antes de colapsar
-    cerrar.classList.toggle("hidden");
-    abrir.classList.toggle("hidden");
-    requestAnimationFrame(() => {
-      menu.style.height = "0";
-    });
-
-    visible = false;
-  }
-});
-
-// boton de lenguaje
+//     LANGUAGE:
 const language = document.querySelector(".language-selector");
 const english = document.querySelector(".selected");
 const spanish = document.querySelector(".option");
 const languageList = document.querySelectorAll(".language");
 
-function toggleLanguages() {
-  spanish.classList.toggle("show");
-}
-
-spanish.addEventListener("click", switchlanguages);
+let laguageVisible = false;
 
 function switchlanguages() {
   if (english.classList.contains("default")) {
     english.innerHTML = "";
     const img = document.createElement("img");
-    img.src = "media/icons8-spanish-flag-48.png";
+    img.src = "../media/icons8-spanish-flag-48.png";
     img.alt = "Spanish flag";
     img.style.width = "1.6875rem";
-    img.style.height = "1.6875";
+    img.style.height = "1.6875rem";
     const text = document.createElement("span");
     text.textContent = "ES";
     text.style.fontSize = "16px";
@@ -78,7 +28,7 @@ function switchlanguages() {
 
     spanish.innerHTML = "";
     const imge = document.createElement("img");
-    imge.src = "media/us.svg";
+    imge.src = "../media/us.svg";
     imge.alt = "American flag";
     imge.style.width = "1.6875rem";
     imge.style.height = "1.6875rem";
@@ -90,10 +40,10 @@ function switchlanguages() {
   } else {
     english.innerHTML = "";
     const img = document.createElement("img");
-    img.src = "media/us.svg";
+    img.src = "../media/us.svg";
     img.alt = "American flag";
     img.style.width = "1.6875rem";
-    img.style.height = "1.6875";
+    img.style.height = "1.6875rem";
     const text = document.createElement("span");
     text.textContent = "EN";
     text.style.fontSize = "16px";
@@ -106,7 +56,7 @@ function switchlanguages() {
 
     spanish.innerHTML = "";
     const imge = document.createElement("img");
-    imge.src = "media/icons8-spanish-flag-48.png";
+    imge.src = "../media/icons8-spanish-flag-48.png";
     imge.alt = "Spanish Flag";
     imge.style.width = "1.6875rem";
     imge.style.height = "1.6875rem";
@@ -124,7 +74,7 @@ function switchlanguages() {
   }
 }
 
-// english.addEventListener ("click", englishFunction);
+// english.addEventListener
 
 english.addEventListener("click", function (e) {
   e.stopPropagation();
@@ -144,3 +94,55 @@ document.addEventListener("click", (e) => {
     spanish.classList.add("hidden");
   }
 });
+
+spanish.addEventListener("click", switchlanguages);
+
+//   SECTION   POLICIES:
+
+const desliz = document.querySelectorAll(".scroll");
+
+for (const lines of desliz) {
+  const text = lines.querySelector(".animation");
+  const arrowUp = lines.querySelector(".arrow-up");
+  const arrowDown = lines.querySelector(".arrow-down");
+  const h4 = lines.querySelector(".h4");
+
+  lines.addEventListener("click", function (e) {
+    e.stopPropagation();
+    if (!arrowDown.classList.contains("hidden")) {
+      arrowDown.classList.toggle("hidden");
+      arrowUp.classList.toggle("hidden");
+      // text.classList.toggle("visible");
+      text.style.height = text.scrollHeight + "px";
+      // text.style.height = "auto";
+      setTimeout(() => {
+        text.style.opacity = "1";
+      }, 250);
+    } else if (!arrowUp.classList.contains("hidden")) {
+      e.stopPropagation();
+      text.style.height = text.scrollHeight + "px";
+      arrowDown.classList.toggle("hidden");
+      arrowUp.classList.toggle("hidden");
+      requestAnimationFrame(() => {
+        text.style.opacity = "0";
+        setTimeout(() => {
+          text.style.height = "0";
+        }, 100);
+      });
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    e.stopPropagation();
+    if (!lines.contains(e.target) && arrowDown.classList.contains("hidden")) {
+      arrowDown.classList.remove("hidden");
+      arrowUp.classList.add("hidden");
+      requestAnimationFrame(() => {
+        text.style.opacity = "0";
+        setTimeout(() => {
+          text.style.height = "0";
+        }, 100);
+      });
+    }
+  });
+}
