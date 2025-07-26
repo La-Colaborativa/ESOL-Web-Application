@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="help.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
       rel="stylesheet"
     />
-    <title>About Us - ESOL - Web - Applicacion</title>
+    <link rel="stylesheet" href="vocabulary.css" />
+    <title>Vocabulary - ESOL - Web - Applicacion</title>
     <link rel="icon" href="../media/Designer.png" type="image/png" />
   </head>
   <body>
@@ -24,6 +24,7 @@
 
         <nav class="header-links">
           <a class="header-text" href="../index.html">Home</a>
+          <a class="header-text" href="../help/help.html">Help</a>
           <a class="header-text" href="../aboutUs/about-us.html">About Us</a>
         </nav>
       </div>
@@ -33,11 +34,12 @@
           ><img
             class="arrow-back"
             src="../media/arrow_circle_left_45dp_FFF_FILL0_wght400_GRAD0_opsz48.svg"
-            alt="back"
+            alt="Arrow back"
         /></a>
       </div>
+
       <div class="header-text2">
-        <h1>Help</h1>
+        <h2 class="vocabulary-text">Vocabulary</h2>
       </div>
     </header>
 
@@ -57,116 +59,88 @@
     </div>
 
     <main>
-      <div class="principal-text">
-        <p>
-          ¡Hello! Here we show you, step by step
-          <span class="bold">how to use</span> this app to learn English in a
-          fun way. Let's discover it together!
-        </p>
-      </div>
-
-      <section class="main-text">
-        <div id="enunciado">
-          <h2>Activities</h2>
-          <p>Follow these steps to get started:</p>
+      <section class="input-and-text">
+        <div class="input-container">
+          <input id="input" type="text" placeholder="Search a topic" />
+          <button class="search">
+            <img
+              class="search-icon"
+              src="../media/search_25dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+              alt="Search icon"
+            />
+          </button>
         </div>
 
-        <div class="steps-container">
-          <div class="steps border">
-            <div class="description">
-              <span class="no-step"><h3>Step 1</h3></span>
-              <p>
-                On the home page, tap the “Activities” button. Use the search
-                bar to find a topic that interests you.
-              </p>
-            </div>
-            <div class="photo-container">
-              <img
-                class="photo"
-                src="../media/undraw_select-option_ibwz.svg"
-                alt="undraw_select-option"
-              />
-            </div>
-          </div>
-
-          <div class="steps reverse border">
-            <div class="photo-container">
-              <img
-                class="photo"
-                src="../media/undraw_choose_j1ds.svg"
-                alt="undraw_choose"
-              />
-            </div>
-            <div class="description">
-              <h3><span class="no-step">Step 2</span></h3>
-              <p>
-                When you find a topic, tap the button and choose whether you
-                want to practice in
-                <span class="bold">Basic, Intermediate or Advanced</span> level.
-              </p>
-            </div>
-          </div>
-
-          <div class="steps border">
-            <div class="description">
-              <h3>Step 3</h3>
-              <p>
-                You’ll get 10 questions per activity. If you make a mistake,
-                don’t worry. On your third try, you’ll get a hint to help you.
-              </p>
-            </div>
-
-            <div class="photo-container">
-              <img
-                class="photo telefono"
-                src="../media/undraw_note-list_47ij.svg"
-                alt="undraw_note-list"
-              />
-              <img
-                class="photo dekstop"
-                src="../media/undraw_correct-answer_vjt7.svg"
-                alt="undraw_correct-answer"
-              />
-            </div>
-          </div>
-
-          <div class="steps reverse">
-            <div class="photo-container">
-              <img
-                class="photo telefono"
-                src="../media/undraw_order-confirmed_m9e9.svg"
-                alt="undraw_order-confirmed"
-              />
-
-              <img
-                class="photo dekstop"
-                src="../media/undraw_publish-article_u3z6.svg"
-                alt="undraw_publish-article"
-              />
-            </div>
-
-            <div class="description">
-              <h3>Step 4</h3>
-              <p>
-                Once you've completed all 10, tap "Solve." You'll see your score
-                as a percentage and you'll be able to:
-              </p>
-              <div class="unordered-list">
-                <ul>
-                  <li>Try again</li>
-                  <li>See vocabulary</li>
-                  <li>Go to activities</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <div class="text">
+          <p>Explore new words by topic for an easy learning</p>
         </div>
       </section>
-      <div class="startNow">
-        <button onclick="location.href='../activities/activities.html'">
-          Start Now
-        </button>
-      </div>
+
+      <section class="all-rows">
+        <a href="../vocabulary-page/vocabularyPage.html">
+          <div class="topics calendar">
+            <div class="description">
+              <p>Days of the week, Months & seasons.</p>
+            </div>
+
+            <div class="foto">
+              <img
+                class="image"
+                src="../media/early_on_55dp_FF9245_FILL1_wght400_GRAD0_opsz48.svg"
+                alt="Calendar"
+              />
+            </div>
+          </div>
+        </a>
+
+        <a href="#">
+          <div class="topics greetings">
+            <div class="description">
+              <p>Greetings/ Goodbyes</p>
+            </div>
+
+            <div class="foto">
+              <img
+                class="image"
+                src="../media/partner_exchange_60dp_FF9245_FILL1_wght400_GRAD0_opsz48.svg"
+                alt="Greetings"
+              />
+            </div>
+          </div>
+        </a>
+
+        <a href="#">
+          <div class="topics numbers">
+            <div class="description">
+              <p>greetings</p>
+            </div>
+
+            <div class="foto">
+              <img
+                class="image"
+                src="../media/partner_exchange_60dp_FF9245_FILL1_wght400_GRAD0_opsz48.svg"
+                alt="Greetings"
+              />
+            </div>
+          </div>
+        </a>
+
+        <a href="#">
+          <div class="topics verb-be">
+            <div class="description">
+              <p>greetings</p>
+            </div>
+
+            <div class="foto">
+              <img
+                class="image"
+                src="../media/partner_exchange_60dp_FF9245_FILL1_wght400_GRAD0_opsz48.svg"
+                alt="Greetings"
+              />
+            </div>
+          </div>
+        </a>
+      </section>
     </main>
 
     <footer>
@@ -181,7 +155,7 @@
         <hr />
         <a class="footer-links" href="../aboutUs/about-us.html">ABOUT US</a>
         <hr />
-        <a class="footer-links" href="help.html">HELP</a>
+        <a class="footer-links" href="../help/help.html">HELP</a>
       </section>
       <hr />
       <section class="all-logos">
@@ -215,6 +189,6 @@
         <p class="last-text">© 2025 La Colaborativa. All rights reserved.</p>
       </div>
     </footer>
-    <script src="help.js"></script>
+    <script src="vocabulary.js"></script>
   </body>
 </html>
