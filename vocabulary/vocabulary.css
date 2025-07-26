@@ -1,0 +1,449 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h3,
+h5,
+h2:hover {
+  cursor: default;
+}
+
+body {
+  background: none;
+  font-family: "inter", sans-serif;
+  font-size: 16px;
+  position: relative;
+}
+
+header {
+  width: 100%;
+  height: 7.625rem;
+  background-color: #ff9245;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.header-text2 {
+  display: flex;
+  justify-content: center;
+  width: 78%;
+}
+
+.arrow-back {
+  width: 2.625rem;
+  height: 2.625rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  color: #fff;
+}
+
+.language-selector {
+  width: 5.4375rem;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+}
+
+.language {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 5.4375rem;
+  height: 2.125rem;
+  border-radius: 7px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+  background-color: #f6f6f6;
+}
+
+.option {
+  position: absolute;
+  bottom: 2.5rem;
+  cursor: pointer;
+}
+
+.flag {
+  width: 1.6875rem;
+  height: 1.6875rem;
+  border-radius: 80px;
+}
+
+.hidden {
+  display: none;
+}
+
+main {
+  margin-top: 1.875rem;
+  padding: 0 28px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.input-and-text {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+}
+
+#input {
+  width: 16rem;
+  height: 2.8125rem;
+  font-size: 1.125rem;
+  border-radius: 11px 0 0 11px;
+  padding-left: 10px;
+  border: none;
+  border: 2px solid #92d6d7;
+  border-right: none;
+}
+
+#input:focus {
+  outline: none;
+}
+
+.search {
+  width: 3.75rem;
+  height: 2.8125rem;
+  border-radius: 0 11px 11px 0;
+  background-color: #92d6d7;
+  border: none;
+  border: 1px solid #92d6d7;
+}
+
+.search-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.text {
+  width: 17rem;
+  height: 3.5625rem;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  margin-top: 1.75rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.all-rows {
+  display: flex;
+  flex-wrap: wrap;
+  width: 23rem;
+  padding: 0 12px;
+  margin-top: 1.5rem;
+  justify-content: space-between;
+}
+
+.image {
+  width: 4rem;
+  height: 4rem;
+}
+.description {
+  height: 50%;
+}
+.description p {
+  color: #006770;
+  font-weight: bold;
+}
+
+.topics {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  width: 9.875rem;
+  height: 10.39125rem;
+  border-radius: 11px;
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.09);
+  padding: 10px 7px 16px 11px;
+  margin-bottom: 1.5rem;
+}
+
+.foto {
+  display: flex;
+  height: 50%;
+  justify-content: end;
+  align-items: end;
+}
+
+footer {
+  background-color: #00464d;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 0;
+  gap: 1.125rem;
+  min-width: 100%;
+  margin-top: 3.125rem;
+}
+
+footer hr {
+  border-color: #fff;
+  width: 100%;
+}
+
+.footer-links {
+  margin-left: 19px;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.colaborativa-logo {
+  width: 12.9275rem;
+  height: 3.625rem;
+  margin-bottom: 22px;
+}
+
+.links {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 14px;
+  min-width: 100%;
+}
+
+.all-logos {
+  display: flex;
+  align-items: center;
+  margin-top: 33px;
+  gap: 2.1875rem;
+}
+
+.logo {
+  height: 3rem;
+  margin: 33px 0;
+}
+
+.last-text {
+  margin-top: 32px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-flow: column;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.32) 100%
+      ),
+      url(../media/words-7550707_1920.jpg);
+    width: 100%;
+    height: 27.5rem;
+    background-size: cover;
+    background-position: center 63%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    text-align: center;
+    justify-content: right;
+    padding: 30px 30px;
+    margin: 0;
+    border-radius: 0 0 50% 50% / 0 17% 17%;
+    position: relative;
+    gap: 40px;
+  }
+  .header-links {
+    display: flex;
+    align-items: start;
+    gap: 2.25rem;
+  }
+
+  .header-text {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: medium;
+    text-decoration: none;
+    letter-spacing: 4%;
+  }
+
+  .header-text:hover {
+    text-decoration: underline;
+    color: #92d6d7;
+  }
+
+  .symbol {
+    display: flex;
+  }
+
+  .header-text2 {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .go-back {
+    display: none;
+  }
+  .logo-principal {
+    max-width: 9.375rem;
+    max-height: 2.625rem;
+  }
+
+  .enunciado {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input-and-text {
+    display: flex;
+    flex-flow: column-reverse;
+    position: absolute;
+    gap: 20px;
+    top: 200px;
+  }
+
+  .text {
+    width: 43.25rem;
+    height: 3.125rem;
+  }
+
+  .text p {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .vocabulary-text {
+    font-size: 3.125rem;
+  }
+
+  #input {
+    width: 31.25rem;
+    height: 3.75rem;
+    padding: 1px 7px 1px 45px;
+    border-radius: 30px 0 0 30px;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+
+  .search {
+    width: 7.3125rem;
+    height: 3.75rem;
+    border-radius: 0 30px 30px 0;
+  }
+  .search-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .all-rows {
+    width: 100%;
+    padding: 0 130px;
+    margin-top: 4.4375rem;
+    justify-content: flex-start;
+    column-gap: 3vw;
+    row-gap: 2rem;
+  }
+
+  .all-rows a {
+    height: 18.25rem;
+  }
+
+  .topics {
+    width: 16.875rem;
+    height: 18.25rem;
+    border-radius: 21px;
+    box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  .topics p:hover {
+    cursor: pointer;
+  }
+
+  .description {
+    padding: 20px 19px;
+  }
+
+  .description p {
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+
+  .image {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    text-align: center;
+  }
+  footer hr {
+    display: none;
+  }
+  .colaborativa-logo {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 45px 45px;
+    justify-self: left;
+  }
+  .links {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: self-start;
+    gap: 1.6rem;
+    margin-top: 45px;
+    padding: 0;
+    font-size: 1.375rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .footer-links {
+    justify-content: center;
+    color: #eee;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+
+  .footer-links:hover {
+    text-decoration: underline;
+  }
+
+  .all-logos {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    margin: 0;
+    justify-self: end;
+    align-self: center;
+    margin-right: 45px;
+  }
+  .logo {
+    height: 2.448125rem;
+  }
+  .footer-last-text {
+    grid-column: 1/4;
+    grid-row: 2/3;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .last-text {
+    margin: 0;
+    font-size: 1.375rem;
+  }
+}

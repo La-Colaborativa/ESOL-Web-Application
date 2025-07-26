@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+p,
+h1,
+h3,
+h4,
+h2:hover {
+  cursor: default;
+}
+
 body {
   background: none;
   font-family: "inter", sans-serif;
@@ -18,8 +26,14 @@ header {
   display: flex;
   align-items: center;
   padding: 0 30px;
-  gap: 3.625rem;
 }
+
+.header-text2 {
+  display: flex;
+  width: 75%;
+  justify-content: center;
+}
+
 h1 {
   font-size: 1.625rem;
   color: #fff;
@@ -60,6 +74,7 @@ h1 {
 .flag {
   width: 1.6875rem;
   height: 1.6875rem;
+  border-radius: 80px;
 }
 
 main {
@@ -154,6 +169,7 @@ h2 {
   display: flex;
   gap: 8px;
   align-items: center;
+  height: 2.8125rem;
 }
 
 .circule-shape {
@@ -233,18 +249,19 @@ h2 {
 .policies-section p {
   font-size: 0.9375rem;
   margin-top: 0.4375rem;
+  width: 100%;
 }
 
 .arrow-down {
-  width: 1.1875rem;
-  height: 0.7325rem;
+  width: 2.375rem;
+  height: 2.375rem;
   margin-right: 22px;
   cursor: pointer;
 }
 
 .arrow-up {
-  width: 1.1875rem;
-  height: 0.7325rem;
+  width: 2.375rem;
+  height: 2.375rem;
   margin-right: 22px;
   cursor: pointer;
 }
@@ -261,6 +278,7 @@ hr {
 .list {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 0.5rem;
 }
 
@@ -521,6 +539,7 @@ footer hr {
     justify-content: center;
     align-items: center;
     width: 6.7rem;
+    height: auto;
     margin-top: 1.625rem;
   }
 
