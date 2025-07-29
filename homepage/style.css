@@ -4,13 +4,20 @@
   box-sizing: border-box;
 }
 
+p,
+h1,
+h3,
+h5,
+h2:hover {
+  cursor: default;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background-color: #fff3b5;
   display: flex;
   flex-flow: column;
   align-items: center;
-  font-size: 1rem;
   position: relative;
 }
 
@@ -24,6 +31,7 @@ main {
 .flag {
   width: 1.6875rem;
   height: 1.6875rem;
+  border-radius: 80px;
 }
 
 header {
@@ -77,12 +85,14 @@ header {
 }
 
 .close {
-  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   cursor: pointer;
 }
 
 .menu {
-  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   cursor: pointer;
 }
 
@@ -101,7 +111,7 @@ header {
 }
 
 .linea-del-nav {
-  border-bottom: solid 1px #ff9245;
+  border: solid 1px #f47820;
   width: 21.625rem;
 }
 
@@ -146,7 +156,7 @@ h1 {
   margin: 0px 33px;
 }
 
-.activities {
+button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,52 +174,12 @@ h1 {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border: none;
   margin-bottom: 25px;
-  cursor: pointer;
-}
-
-.vocabulary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 52px;
-  width: 20.75rem;
-  height: 4.5625rem;
-  font-size: 24px;
-  font-weight: bold;
-  padding: 0 30px;
-
-  color: #fff;
-  background-color: #ff9245;
-  border-radius: 7px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  border: none;
-  margin-bottom: 25px;
-  cursor: pointer;
-}
-
-.grammar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 52px;
-  width: 20.75rem;
-  height: 4.5625rem;
-  font-size: 24px;
-
-  padding: 0 30px;
-  font-weight: bold;
-  color: #eee;
-  background-color: #ff9245;
-  border-radius: 7px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  border: none;
   cursor: pointer;
 }
 
 .symbol {
-  font-size: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
 }
 
 footer {
@@ -270,10 +240,6 @@ footer hr {
 }
 
 @media (min-width: 768px) {
-  body {
-    position: static;
-  }
-
   header {
     flex-flow: row;
     background-image: linear-gradient(
@@ -300,17 +266,22 @@ footer hr {
   .hero {
     background-image: none;
     position: absolute;
-    top: 1%;
-    width: 60.0625rem;
+    top: 55px;
+    height: auto;
+    padding: 10px 0;
   }
+
+  .header-text2 {
+    width: 100%;
+  }
+
   .description {
-    font-size: 2.25rem;
+    font-size: 1.8rem;
     line-height: normal;
-    display: inline-block;
-    margin-top: -20px;
+    margin-top: 0.5rem;
   }
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .menu {
     display: none;
@@ -354,14 +325,14 @@ footer hr {
   }
 
   .principal {
-    margin-top: 25px;
+    margin-top: 1.5625rem;
     flex-flow: row;
     gap: 2rem;
     align-items: center;
     justify-content: center;
   }
 
-  .activities {
+  button {
     flex-flow: column;
     width: 237px;
     height: 237px;
@@ -370,31 +341,11 @@ footer hr {
     gap: 12px;
     justify-content: center;
     margin: 0;
-  }
-
-  .vocabulary {
-    flex-flow: column;
-    width: 237px;
-    height: 237px;
-    font-size: 28px;
-    font-weight: bold;
-    gap: 12px;
-    justify-content: center;
-    margin: 0;
-  }
-
-  .grammar {
-    flex-flow: column;
-    width: 237px;
-    height: 237px;
-    font-size: 28px;
-    font-weight: bold;
-    gap: 12px;
-    justify-content: center;
   }
 
   .symbol {
-    font-size: 105px;
+    width: 6.125rem;
+    height: 6.125rem;
   }
 
   footer {
