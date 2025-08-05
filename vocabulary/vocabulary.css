@@ -347,12 +347,16 @@ footer hr {
     height: 2rem;
   }
 
+  main {
+    padding: 0;
+  }
+
   .all-rows {
     width: 100%;
-    padding: 0 130px;
-    margin-top: 4.4375rem;
+    padding: 0 35px;
+    margin-top: 4rem;
     justify-content: flex-start;
-    column-gap: 3vw;
+    column-gap: 2.5vw;
     row-gap: 2rem;
   }
 
@@ -369,6 +373,7 @@ footer hr {
 
   .topics p:hover {
     cursor: pointer;
+    font-size: 1.75rem;
   }
 
   .description {
