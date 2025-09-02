@@ -184,6 +184,7 @@ main {
   font-size: 16px;
   margin-bottom: 5px;
   margin-top: 3px;
+  color: #006770;
 }
 
 footer {
@@ -470,10 +471,17 @@ label {
     height: 1.834375rem;
   }
 
+  main {
+    margin-top: 3.75rem;
+  }
+
   .all-sections {
-    margin-top: 10px;
+    margin-top: 0;
+    width: 100%;
+    padding: 0 10px 0 60px;
     flex-flow: row;
-    gap: 38px;
+    column-gap: 2.4vw;
+    row-gap: 1.5rem;
     flex-wrap: wrap;
   }
 
@@ -495,16 +503,16 @@ label {
   }
 
   .description {
-    font-size: 1.375rem;
+    font-size: 1.3rem;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 10px;
     margin-right: 9px;
   }
 
   .description h3 {
-    font-size: 1.5rem;
-    margin-top: 10px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
   }
 
   .modal {
