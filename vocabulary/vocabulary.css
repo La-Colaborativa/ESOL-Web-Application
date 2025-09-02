@@ -348,15 +348,15 @@ footer hr {
   }
 
   main {
-    padding: 0;
+    margin-top: 3.75rem;
   }
 
   .all-rows {
     width: 100%;
-    padding: 0 35px;
-    margin-top: 4rem;
+    padding: 0 10px 0 45px;
+    margin-top: 0;
     justify-content: flex-start;
-    column-gap: 2.5vw;
+    column-gap: 3vw;
     row-gap: 2rem;
   }
 
@@ -365,33 +365,45 @@ footer hr {
   }
 
   .topics {
-    width: 16.875rem;
-    height: 18.25rem;
+    /* width: 16.875rem; */
+    /* height: 18.25rem; */
+    width: 16rem;
+    height: 17rem;
     border-radius: 21px;
     box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.15);
+    padding: 10px 15px 16px 11px;
   }
 
   .topics p:hover {
     cursor: pointer;
-    font-size: 1.75rem;
   }
 
   .description {
     padding: 20px 19px;
   }
 
-  .description p {
+  /* .description p {
     font-size: 1.75rem;
+    font-weight: bold;
+  } */
+
+  .description p {
+    font-size: 1.5rem;
     font-weight: bold;
   }
 
-  .image {
+  /* .image {
     width: 8rem;
     height: 8rem;
+  } */
+
+  .image {
+    width: 6rem;
+    height: 6rem;
   }
 
   footer {
-    margin-top: 3rem;
+    margin-top: 4rem;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
